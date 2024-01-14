@@ -11,10 +11,10 @@ void fusion(int arr[], int l, int m, int r) {
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    // Création de sous-tableaux temporaires
+    // CrÃ©ation de sous-tableaux temporaires
     int L[n1], R[n2];
 
-    // Copie des données dans les sous-tableaux temporaires L[] et R[]
+    // Copie des donnÃ©es dans les sous-tableaux temporaires L[] et R[]
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
     for (j = 0; j < n2; j++)
@@ -23,7 +23,7 @@ void fusion(int arr[], int l, int m, int r) {
     // Fusion des sous-tableaux temporaires dans arr[l..r]
     i = 0; // Index initial du premier sous-tableau
     j = 0; // Index initial du second sous-tableau
-    k = l; // Index initial du tableau fusionné
+    k = l; // Index initial du tableau fusionnÃ©
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
@@ -35,14 +35,14 @@ void fusion(int arr[], int l, int m, int r) {
         k++;
     }
 
-    // Copie des éléments restants de L[], s'il y en a
+    // Copie des Ã©lÃ©ments restants de L[], s'il y en a
     while (i < n1) {
         arr[k] = L[i];
         i++;
         k++;
     }
 
-    // Copie des éléments restants de R[], s'il y en a
+    // Copie des Ã©lÃ©ments restants de R[], s'il y en a
     while (j < n2) {
         arr[k] = R[j];
         j++;
@@ -51,23 +51,23 @@ void fusion(int arr[], int l, int m, int r) {
 }
 
 // Fonction principale qui trie arr[l..r] en utilisant le tri par fusion
-// l est l'indice de début tableau
-// r est l'indice de la derniére case
+// l est l'indice de dÃ©but tableau
+// r est l'indice de la derniÃ©re case
 void triFusion(int arr[], int l, int r) {
     if (l < r) {
-        // Trouver le point médian
+        // Trouver le point mÃ©dian
         int m = l + (r - l) / 2;
 
-        // Trier la première et la deuxième moitié
+        // Trier la premiÃ¨re et la deuxiÃ¨me moitiÃ©
         triFusion(arr, l, m);
         triFusion(arr, m + 1, r);
 
-        // Fusionner les moitiés triées
+        // Fusionner les moitiÃ©s triÃ©es
         fusion(arr, l, m, r);
     }
 }
 
-// Fonction utilitaire pour afficher un tableau donné
+// Fonction utilitaire pour afficher un tableau donnÃ©
 void afficherTableau(int arr[], int taille) {
     int i;
 
