@@ -8,6 +8,7 @@
 // Le second sous-tableau est arr[m+1..r]
 void fusion(int arr[], int l, int m, int r) {
     int i, j, k;
+    // n1,n2 est la taille du sous tableaux 
     int n1 = m - l + 1;
     int n2 = r - m;
 
@@ -32,6 +33,7 @@ void fusion(int arr[], int l, int m, int r) {
             arr[k] = R[j];
             j++;
         }
+        // passer a l'élément suivant dans le tableau arr
         k++;
     }
 
@@ -60,10 +62,12 @@ void triFusion(int arr[], int l, int r) {
 
         // Trier la première et la deuxième moitié
         triFusion(arr, l, m);
+        // maintenant quand on arrive a la condition de base je remonte pas par pas en fusionant les sous tableau
         triFusion(arr, m + 1, r);
 
         // Fusionner les moitiés triées
         fusion(arr, l, m, r);
+        // dans cette appel les indices ne change pas mais les valeurs qui change apré la trie
     }
 }
 
