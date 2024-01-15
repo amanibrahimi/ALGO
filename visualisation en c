@@ -107,7 +107,7 @@ void afficherTableau(int arr[], int taille) {
 
 int main() {
     // Initialisation de Raylib
-    InitWindow(800, 600, "Tri Fusion Animation");
+    InitWindow(1000, 1000, "Tri Fusion Animation");
 
     printf("Donnez la taille du tableau : ");
     scanf("%d", &taille);
