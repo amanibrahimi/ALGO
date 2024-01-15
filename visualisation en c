@@ -40,7 +40,7 @@ void fusion(int l, int m, int r) {
 
         Render();
         //délai entre chaque étape
-        usleep(2000000);//est utilisée pour ralentir l'animation de tri afin que vous puissiez visualiser chaque étape du tri par fusion
+        usleep( 1000000);//est utilisée pour ralentir l'animation de tri afin que vous puissiez visualiser chaque étape du tri par fusion
   // est une pause de 2 secondes
     }
 
@@ -52,7 +52,7 @@ void fusion(int l, int m, int r) {
 
 
         Render();
-        usleep(2000000);
+        usleep( 1000000);
     }
 
     // Copie des éléments restants de R[], s'il y en a
@@ -63,7 +63,7 @@ void fusion(int l, int m, int r) {
 
 
         Render();
-        usleep(2000000);
+        usleep( 1000000);
     }
 }
 
