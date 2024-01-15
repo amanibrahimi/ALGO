@@ -13,10 +13,10 @@ void fusion(int l, int m, int r) {
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    // Création de sous-tableaux temporaires
+    // CrÃ©ation de sous-tableaux temporaires
     int L[n1], R[n2];
 
-    // Copie des données dans les sous-tableaux temporaires L[] et R[]
+    // Copie des donnÃ©es dans les sous-tableaux temporaires L[] et R[]
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
     for (j = 0; j < n2; j++)
@@ -36,15 +36,15 @@ void fusion(int l, int m, int r) {
         }
         k++;
 
-    // Mettre à jour la visualisation après chaque
+    // Mettre Ã  jour la visualisation aprÃ¨s chaque
 
         Render();
-        //délai entre chaque étape
-        usleep(2000000);//est utilisée pour ralentir l'animation de tri afin que vous puissiez visualiser chaque étape du tri par fusion
+        //dÃ©lai entre chaque Ã©tape
+        usleep(2000000);//est utilisÃ©e pour ralentir l'animation de tri afin que vous puissiez visualiser chaque Ã©tape du tri par fusion
   // est une pause de 2 secondes
     }
 
-    // Copie des éléments restants de L[], s'il y en a
+    // Copie des Ã©lÃ©ments restants de L[], s'il y en a
     while (i < n1) {
         arr[k] = L[i];
         i++;
@@ -55,7 +55,7 @@ void fusion(int l, int m, int r) {
         usleep(2000000);
     }
 
-    // Copie des éléments restants de R[], s'il y en a
+    // Copie des Ã©lÃ©ments restants de R[], s'il y en a
     while (j < n2) {
         arr[k] = R[j];
         j++;
@@ -82,14 +82,14 @@ void Render() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
 
-    // Dessiner des barres pour chaque élément du tableau
+    // Dessiner des barres pour chaque Ã©lÃ©ment du tableau
     for (int i = 0; i < taille; i++) {
-      //  Générer une couleur aléatoire pour chaque rectangle
+      //  GÃ©nÃ©rer une couleur alÃ©atoire pour chaque rectangle
         Color rectangleColor = (Color){GetRandomValue(0, 250), GetRandomValue(0, 250), GetRandomValue(0, 250), 250};
 
         DrawRectangle(i * (GetScreenWidth() / taille), GetScreenHeight() - (arr[i] * 40), GetScreenWidth() / taille, (arr[i] * 40), rectangleColor);
 
-        // Dessiner les valeurs de chaque cases au-dessus du rectangle approprié
+        // Dessiner les valeurs de chaque cases au-dessus du rectangle appropriÃ©
         DrawText(TextFormat("%d", arr[i]), i * (GetScreenWidth() / taille) + 40, GetScreenHeight() - (arr[i] * 40) - 40, 40, BLACK);
     }
 
@@ -115,7 +115,7 @@ int main() {
     arr = (int *)malloc(taille * sizeof(int));
 
     for (int i = 0; i < taille; i++) {
-        printf("Élément %d : ", i + 1);
+        printf("Ã‰lÃ©ment %d : ", i + 1);
         scanf("%d", &arr[i]);
     }
 
@@ -126,9 +126,9 @@ int main() {
     triFusion(0, taille - 1);
 
     // Boucle principale
-    while (!WindowShouldClose())//garantit que le programme reste dans la boucle tant que la fenêtre est ouverte.
+    while (!WindowShouldClose())//garantit que le programme reste dans la boucle tant que la fenÃªtre est ouverte.
     {
-        // Rendu pour afficher le tableau trié
+        // Rendu pour afficher le tableau triÃ©
         Render();
     }
 
